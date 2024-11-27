@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class NotesRepository(private val notesDao: NotesDao) {
-    val allNotes: LiveData<List<NotesEntity>> = notesDao.getAllPendingNotes()
+    val allNotes: LiveData<List<NotesEntity>> = notesDao.getAllNotes()
 
     fun insertNote(note: NotesEntity): Long {
         return notesDao.insertNote(note)
